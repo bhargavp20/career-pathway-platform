@@ -1,36 +1,175 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CaP — Career Pathway
 
-## Getting Started
+### Discover Your Possibilities
 
-First, run the development server:
+CaP (Career Pathway) is an AI-assisted career exploration platform designed for Class 11 and 12 students.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Many students know only a few familiar career options such as engineering or medicine. CaP helps students explore multiple possible pathways based on their subjects, activities, interests, strengths and goals.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> CaP does not choose a career for the student. It helps students discover and understand pathways they may not have considered.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Problem
 
-## Learn More
+Career information is often scattered across different websites.
 
-To learn more about Next.js, take a look at the following resources:
+Students may need to separately search for:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Courses and degrees
+- Eligibility
+- Entrance exams
+- Skills
+- Career opportunities
+- Higher studies
+- Colleges
+- Scholarships
+- Salary information
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This makes career exploration confusing, especially for students who are unsure about what options are available to them.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 💡 Solution
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+CaP brings career exploration into one structured experience.
+
+A student can:
+
+1. Enter their academic subjects
+2. Select activities they enjoy
+3. Select areas of interest
+4. Discover matching career pathways
+5. Explore individual pathways
+6. Compare different pathways
+7. View possible career roles and indicative salary information
+8. Ask the AI Career Guide for additional possibilities
+
+---
+
+## ✨ Key Features
+
+### 🎯 Personalized Pathway Discovery
+
+CaP matches pathways using:
+
+- Subjects
+- Activities
+- Interests
+
+The matching system presents multiple possibilities instead of selecting a single career for the student.
+
+### 🧭 Pathway Exploration
+
+Each pathway provides structured information including:
+
+- Description
+- Relevant subjects
+- Activities
+- Interests
+- Degree options
+- Skills
+- Career roles
+- Higher-study possibilities
+- Salary information
+
+### ⚖️ Pathway Comparison
+
+Students can compare pathways side by side to understand how they differ.
+
+### 🤖 AI Career Guide
+
+CaP uses Google's Gemini API to generate additional career pathway suggestions based on the student's profile.
+
+The AI is designed to:
+
+- Suggest possibilities
+- Explain why a pathway may match
+- Suggest skills to develop
+- Describe typical degree routes
+
+The AI does not rank pathways or tell students which career they should choose.
+
+### 💰 Career Salary Information
+
+CaP displays indicative salary estimates for major career roles in India.
+
+Salary information is presented as an estimate and may vary depending on:
+
+- Experience
+- Location
+- Skills
+- Employer
+- Industry
+
+---
+
+## 🔄 How CaP Works
+
+```text
+Student Profile
+      ↓
+Subjects + Activities + Interests
+      ↓
+Pathway Matching
+      ↓
+Multiple Career Pathways
+      ↓
+Explore a Pathway
+      ↓
+Compare Options
+      ↓
+Make an Informed Decision
+
+
+
+
+Student Profile
+      ↓
+Next.js API Route
+      ↓
+Google Gemini API
+      ↓
+Career Pathway Suggestions
+      ↓
+CaP Interface
+
+
+
+
+career-pathway-platform/
+│
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── career-ai/
+│   │   │       └── route.ts
+│   │   │
+│   │   ├── compare/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── explore/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── pathway/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── results/
+│   │   │   └── page.tsx
+│   │   │
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   │
+│   ├── components/
+│   │   ├── ThemeMenu.tsx
+│   │   └── ThemeProvider.tsx
+│   │
+│   └── data/
+│       └── pathways.ts
+│
+├── public/
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
