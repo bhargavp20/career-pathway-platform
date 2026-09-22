@@ -78,6 +78,7 @@ export default function PathwayPage() {
           </span>
 
         </div>
+       </div>
       </header>
 
       {/* Hero */}
