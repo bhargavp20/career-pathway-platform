@@ -24,3 +24,199 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* ========================================
+   PATHWAY THEMES
+   ======================================== */
+
+html[data-theme="light"] {
+  --theme-bg: #f8fafc;
+  --theme-text: #0f172a;
+  --theme-primary: #2563eb;
+  --theme-secondary: #4f46e5;
+  --theme-accent: #06b6d4;
+}
+
+html[data-theme="midnight"] {
+  --theme-bg: #07111f;
+  --theme-text: #e2e8f0;
+  --theme-primary: #60a5fa;
+  --theme-secondary: #818cf8;
+  --theme-accent: #22d3ee;
+}
+
+html[data-theme="emerald"] {
+  --theme-bg: #f0fdf4;
+  --theme-text: #064e3b;
+  --theme-primary: #059669;
+  --theme-secondary: #0d9488;
+  --theme-accent: #14b8a6;
+}
+
+/* ========================================
+   GLOBAL THEME BEHAVIOR
+   ======================================== */
+
+html[data-theme="light"] body {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+html[data-theme="midnight"] body {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+html[data-theme="emerald"] body {
+  background: var(--theme-bg);
+  color: var(--theme-text);
+}
+
+/* Smooth theme transition */
+body,
+header,
+main,
+section,
+div,
+button,
+select {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ========================================
+   PATHWAY THEME OVERRIDES
+   ======================================== */
+
+/* ---------- MIDNIGHT ---------- */
+
+html[data-theme="midnight"] {
+  background: #07111f;
+}
+
+html[data-theme="midnight"] body {
+  background: #07111f !important;
+  color: #e2e8f0 !important;
+}
+
+/* Main light backgrounds */
+html[data-theme="midnight"] .bg-slate-50 {
+  background-color: #07111f !important;
+}
+
+html[data-theme="midnight"] .bg-slate-50\/80 {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+}
+
+/* White glass cards */
+html[data-theme="midnight"] .bg-white\/50,
+html[data-theme="midnight"] .bg-white\/55,
+html[data-theme="midnight"] .bg-white\/60,
+html[data-theme="midnight"] .bg-white\/70 {
+  background-color: rgba(15, 23, 42, 0.65) !important;
+}
+
+/* Text */
+html[data-theme="midnight"] .text-slate-900 {
+  color: #f1f5f9 !important;
+}
+
+html[data-theme="midnight"] .text-slate-800 {
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="midnight"] .text-slate-700 {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="midnight"] .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="midnight"] .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="midnight"] .text-slate-400 {
+  color: #64748b !important;
+}
+
+/* Borders */
+html[data-theme="midnight"] .border-white\/70,
+html[data-theme="midnight"] .border-white\/80 {
+  border-color: rgba(148, 163, 184, 0.2) !important;
+}
+
+html[data-theme="midnight"] .border-slate-200,
+html[data-theme="midnight"] .border-slate-200\/70 {
+  border-color: rgba(148, 163, 184, 0.2) !important;
+}
+
+
+/* ---------- EMERALD ---------- */
+
+html[data-theme="emerald"] {
+  background: #f0fdf4;
+}
+
+html[data-theme="emerald"] body {
+  background: #f0fdf4 !important;
+  color: #064e3b !important;
+}
+
+/* Main light backgrounds */
+html[data-theme="emerald"] .bg-slate-50 {
+  background-color: #f0fdf4 !important;
+}
+
+html[data-theme="emerald"] .bg-slate-50\/80 {
+  background-color: rgba(236, 253, 245, 0.8) !important;
+}
+
+/* White glass cards */
+html[data-theme="emerald"] .bg-white\/50,
+html[data-theme="emerald"] .bg-white\/55,
+html[data-theme="emerald"] .bg-white\/60,
+html[data-theme="emerald"] .bg-white\/70 {
+  background-color: rgba(255, 255, 255, 0.68) !important;
+}
+
+/* Text */
+html[data-theme="emerald"] .text-slate-900 {
+  color: #064e3b !important;
+}
+
+html[data-theme="emerald"] .text-slate-800 {
+  color: #065f46 !important;
+}
+
+html[data-theme="emerald"] .text-slate-700 {
+  color: #047857 !important;
+}
+
+html[data-theme="emerald"] .text-slate-600 {
+  color: #166534 !important;
+}
+
+html[data-theme="emerald"] .text-slate-500 {
+  color: #4b7c68 !important;
+}
+
+html[data-theme="emerald"] .text-slate-400 {
+  color: #6b9080 !important;
+}
+
+/* Borders */
+html[data-theme="emerald"] .border-white\/70,
+html[data-theme="emerald"] .border-white\/80 {
+  border-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+html[data-theme="emerald"] .border-slate-200,
+html[data-theme="emerald"] .border-slate-200\/70 {
+  border-color: rgba(16, 185, 129, 0.2) !important;
+}

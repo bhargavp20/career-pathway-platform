@@ -1,4 +1,7 @@
 "use client";
+import Link from "next/link";
+
+
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -47,151 +50,337 @@ export default function Explore() {
     }
   };
 
+  const totalSelected =
+    selectedSubjects.length +
+    selectedActivities.length +
+    selectedInterests.length;
+
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-900">
+    <main className="min-h-screen overflow-hidden bg-slate-50 text-slate-900">
+
+      {/* Background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute left-[-180px] top-[-150px] h-[450px] w-[450px] rounded-full bg-blue-200/40 blur-3xl" />
+        <div className="absolute right-[-180px] top-[350px] h-[500px] w-[500px] rounded-full bg-indigo-200/30 blur-3xl" />
+        <div className="absolute bottom-[-200px] left-[35%] h-[400px] w-[400px] rounded-full bg-cyan-100/40 blur-3xl" />
+      </div>
+
+
       {/* Header */}
-      <header className="border-b bg-white">
-        <div className="max-w-5xl mx-auto px-6 py-5">
-          <div className="text-2xl font-bold">Pathway</div>
+      <header className="border-b border-white/70 bg-white/50 backdrop-blur-xl">
+
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+
+          <Link href="/" className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 font-bold text-white shadow-lg shadow-blue-600/20">
+              C
+            </div>
+
+            <div>
+              <div className="text-2xl font-bold leading-none tracking-tight">
+                CaP
+              </div>
+
+              <div className="mt-1 text-xs font-medium text-slate-500">
+                Career Pathway
+              </div>
+            </div>
+          </Link>
+
+          <div className="text-sm font-medium text-slate-500">
+            Career Discovery
+          </div>
+
         </div>
+
       </header>
 
-      {/* Questionnaire */}
-      <section className="max-w-4xl mx-auto px-6 py-12">
+
+      {/* Main */}
+      <section className="mx-auto max-w-5xl px-6 py-12 md:py-16">
+
+        {/* Intro */}
         <div className="mb-10">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
-            Step 1 of 3
-          </p>
 
-          <h1 className="text-4xl md:text-5xl font-bold mt-3">
-            Let&apos;s understand what interests you.
-          </h1>
+          <div className="flex items-center justify-between">
 
-          <p className="text-gray-600 mt-4 text-lg">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+                Build your profile
+              </p>
+
+              <h1 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
+                Let&apos;s understand what interests you.
+              </h1>
+            </div>
+
+            <div className="hidden rounded-full border border-white/80 bg-white/60 px-4 py-2 text-sm font-medium text-slate-600 shadow-sm backdrop-blur-md md:block">
+              {totalSelected} selected
+            </div>
+
+          </div>
+
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
             There are many career paths beyond the obvious ones. Tell us a
             little about yourself and we&apos;ll help you explore them.
           </p>
+
         </div>
+
+
+        {/* Progress */}
+        <div className="mb-8 flex items-center gap-3">
+
+          <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-200">
+            <div className="h-full w-1/3 rounded-full bg-blue-600" />
+          </div>
+
+          <span className="text-sm font-medium text-slate-500">
+            1 of 3
+          </span>
+
+        </div>
+
 
         {/* Subjects */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-7 mb-6">
-          <h2 className="text-xl font-semibold">
-            1. Which subjects do you enjoy?
-          </h2>
+        <div className="mb-6 rounded-3xl border border-white/80 bg-white/55 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl md:p-8">
 
-          <p className="text-gray-500 mt-2">
-            Select all that apply.
-          </p>
+          <div className="flex items-start gap-4">
 
-          <div className="grid sm:grid-cols-2 gap-3 mt-5">
-            {subjects.map((subject) => (
-              <button
-                key={subject}
-                onClick={() =>
-                  toggleSelection(
-                    subject,
-                    selectedSubjects,
-                    setSelectedSubjects
-                  )
-                }
-                className={`text-left px-5 py-4 rounded-xl border transition ${
-                  selectedSubjects.includes(subject)
-                    ? "border-blue-600 bg-blue-50 text-blue-700"
-                    : "border-gray-200 hover:border-blue-400"
-                }`}
-              >
-                {subject}
-              </button>
-            ))}
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-blue-100 font-bold text-blue-700">
+              01
+            </div>
+
+            <div>
+              <h2 className="text-xl font-bold">
+                Which subjects do you enjoy?
+              </h2>
+
+              <p className="mt-1 text-sm text-slate-500">
+                Select all that apply.
+              </p>
+            </div>
+
           </div>
+
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+
+            {subjects.map((subject) => {
+              const selected = selectedSubjects.includes(subject);
+
+              return (
+                <button
+                  key={subject}
+                  onClick={() =>
+                    toggleSelection(
+                      subject,
+                      selectedSubjects,
+                      setSelectedSubjects
+                    )
+                  }
+                  className={`group flex items-center justify-between rounded-2xl border p-4 text-left transition ${
+                    selected
+                      ? "border-blue-300 bg-blue-50/80 text-blue-700 shadow-sm"
+                      : "border-white/80 bg-white/50 text-slate-700 hover:-translate-y-0.5 hover:border-blue-200 hover:bg-white/80"
+                  }`}
+                >
+
+                  <span className="font-medium">
+                    {subject}
+                  </span>
+
+                  <span
+                    className={`flex h-6 w-6 items-center justify-center rounded-full border text-xs font-bold transition ${
+                      selected
+                        ? "border-blue-600 bg-blue-600 text-white"
+                        : "border-slate-300 text-transparent group-hover:border-blue-300"
+                    }`}
+                  >
+                    ✓
+                  </span>
+
+                </button>
+              );
+            })}
+
+          </div>
+
         </div>
+
 
         {/* Activities */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-7 mb-6">
-          <h2 className="text-xl font-semibold">
-            2. What do you enjoy doing?
-          </h2>
+        <div className="mb-6 rounded-3xl border border-white/80 bg-white/55 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl md:p-8">
 
-          <p className="text-gray-500 mt-2">
-            Select all that apply.
-          </p>
+          <div className="flex items-start gap-4">
 
-          <div className="grid sm:grid-cols-2 gap-3 mt-5">
-            {activities.map((activity) => (
-              <button
-                key={activity}
-                onClick={() =>
-                  toggleSelection(
-                    activity,
-                    selectedActivities,
-                    setSelectedActivities
-                  )
-                }
-                className={`text-left px-5 py-4 rounded-xl border transition ${
-                  selectedActivities.includes(activity)
-                    ? "border-blue-600 bg-blue-50 text-blue-700"
-                    : "border-gray-200 hover:border-blue-400"
-                }`}
-              >
-                {activity}
-              </button>
-            ))}
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-indigo-100 font-bold text-indigo-700">
+              02
+            </div>
+
+            <div>
+              <h2 className="text-xl font-bold">
+                What do you enjoy doing?
+              </h2>
+
+              <p className="mt-1 text-sm text-slate-500">
+                Select all that apply.
+              </p>
+            </div>
+
           </div>
+
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+
+            {activities.map((activity) => {
+              const selected = selectedActivities.includes(activity);
+
+              return (
+                <button
+                  key={activity}
+                  onClick={() =>
+                    toggleSelection(
+                      activity,
+                      selectedActivities,
+                      setSelectedActivities
+                    )
+                  }
+                  className={`group flex items-center justify-between rounded-2xl border p-4 text-left transition ${
+                    selected
+                      ? "border-indigo-300 bg-indigo-50/80 text-indigo-700 shadow-sm"
+                      : "border-white/80 bg-white/50 text-slate-700 hover:-translate-y-0.5 hover:border-indigo-200 hover:bg-white/80"
+                  }`}
+                >
+
+                  <span className="font-medium">
+                    {activity}
+                  </span>
+
+                  <span
+                    className={`flex h-6 w-6 items-center justify-center rounded-full border text-xs font-bold transition ${
+                      selected
+                        ? "border-indigo-600 bg-indigo-600 text-white"
+                        : "border-slate-300 text-transparent group-hover:border-indigo-300"
+                    }`}
+                  >
+                    ✓
+                  </span>
+
+                </button>
+              );
+            })}
+
+          </div>
+
         </div>
+
 
         {/* Interests */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-7 mb-8">
-          <h2 className="text-xl font-semibold">
-            3. What interests you most?
-          </h2>
+        <div className="mb-8 rounded-3xl border border-white/80 bg-white/55 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl md:p-8">
 
-          <p className="text-gray-500 mt-2">
-            Select all that apply.
-          </p>
+          <div className="flex items-start gap-4">
 
-          <div className="grid sm:grid-cols-2 gap-3 mt-5">
-            {interests.map((interest) => (
-              <button
-                key={interest}
-                onClick={() =>
-                  toggleSelection(
-                    interest,
-                    selectedInterests,
-                    setSelectedInterests
-                  )
-                }
-                className={`text-left px-5 py-4 rounded-xl border transition ${
-                  selectedInterests.includes(interest)
-                    ? "border-blue-600 bg-blue-50 text-blue-700"
-                    : "border-gray-200 hover:border-blue-400"
-                }`}
-              >
-                {interest}
-              </button>
-            ))}
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-cyan-100 font-bold text-cyan-700">
+              03
+            </div>
+
+            <div>
+              <h2 className="text-xl font-bold">
+                What interests you most?
+              </h2>
+
+              <p className="mt-1 text-sm text-slate-500">
+                Select all that apply.
+              </p>
+            </div>
+
           </div>
+
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+
+            {interests.map((interest) => {
+              const selected = selectedInterests.includes(interest);
+
+              return (
+                <button
+                  key={interest}
+                  onClick={() =>
+                    toggleSelection(
+                      interest,
+                      selectedInterests,
+                      setSelectedInterests
+                    )
+                  }
+                  className={`group flex items-center justify-between rounded-2xl border p-4 text-left transition ${
+                    selected
+                      ? "border-cyan-300 bg-cyan-50/80 text-cyan-700 shadow-sm"
+                      : "border-white/80 bg-white/50 text-slate-700 hover:-translate-y-0.5 hover:border-cyan-200 hover:bg-white/80"
+                  }`}
+                >
+
+                  <span className="font-medium">
+                    {interest}
+                  </span>
+
+                  <span
+                    className={`flex h-6 w-6 items-center justify-center rounded-full border text-xs font-bold transition ${
+                      selected
+                        ? "border-cyan-600 bg-cyan-600 text-white"
+                        : "border-slate-300 text-transparent group-hover:border-cyan-300"
+                    }`}
+                  >
+                    ✓
+                  </span>
+
+                </button>
+              );
+            })}
+
+          </div>
+
         </div>
 
-        {/* Continue */}
-        <div className="flex justify-end">
+
+        {/* Bottom CTA */}
+        <div className="flex flex-col items-center justify-between gap-4 rounded-3xl border border-white/80 bg-white/50 p-5 shadow-xl shadow-slate-200/30 backdrop-blur-xl sm:flex-row">
+
+          <div>
+            <p className="font-semibold">
+              Ready to discover your pathways?
+            </p>
+
+            <p className="text-sm text-slate-500">
+              You can select as many options as you want.
+            </p>
+          </div>
+
+
           <button
-            className="px-8 py-4 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition"
+            className="w-full rounded-full bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700 sm:w-auto"
             onClick={() => {
-                const profile = {
+              const profile = {
                 subjects: selectedSubjects,
                 activities: selectedActivities,
                 interests: selectedInterests,
-                };
+              };
 
-                localStorage.setItem("studentProfile", JSON.stringify(profile));
+              localStorage.setItem(
+                "studentProfile",
+                JSON.stringify(profile)
+              );
 
-                router.push("/results");
+              router.push("/results");
             }}
-            >
+          >
             Discover My Pathways →
-            </button>
+          </button>
+
         </div>
+
       </section>
+
     </main>
   );
 }
