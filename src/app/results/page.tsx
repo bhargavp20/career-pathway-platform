@@ -362,7 +362,7 @@ export default function Results() {
               <button
                 onClick={askGemini}
                 disabled={loadingAI}
-                className="shrink-0 rounded-full bg-white px-6 py-3.5 font-semibold text-slate-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50"
+                className="shrink-0 rounded-full bg-white px-6 py-3.5 font-semibold !text-slate-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {loadingAI ? "Thinking..." : "Ask AI for More Pathways"}
               </button>
