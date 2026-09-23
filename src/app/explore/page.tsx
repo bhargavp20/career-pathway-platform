@@ -128,19 +128,6 @@ export default function Explore() {
         </div>
 
 
-        {/* Progress */}
-        <div className="mb-8 flex items-center gap-3">
-
-          <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-200">
-            <div className="h-full w-1/3 rounded-full bg-blue-600" />
-          </div>
-
-          <span className="text-sm font-medium text-slate-500">
-            1 of 3
-          </span>
-
-        </div>
-
 
         {/* Subjects */}
         <div className="mb-6 rounded-3xl border border-white/80 bg-white/55 p-6 shadow-xl shadow-slate-200/40 backdrop-blur-xl md:p-8">
