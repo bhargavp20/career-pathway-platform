@@ -418,13 +418,13 @@ export default function PathwayPage() {
                     {resource.platform}
                   </span>
 
-                  <h3 className="mt-4 text-2xl font-bold">
+                  <h3 className="mt-4 text-2xl font-bold text-slate-900">
                     {resource.title}
                   </h3>
-
-                  <p className="mt-3 leading-relaxed text-slate-600">
+                  
+                  <p className="mt-3 leading-relaxed !text-slate-600">
                     {resource.description}
-                  </p>
+                  </p>>
 
                   <a
                     href={resource.url}
