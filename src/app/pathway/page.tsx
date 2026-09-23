@@ -411,7 +411,7 @@ export default function PathwayPage() {
 
                 <div
                   key={resource.title}
-                  className="overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 md:p-8"
+                  className="pathway-resource-card overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 md:p-8"
                 >
 
                   <span className="rounded-full bg-white/80 px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-700">
