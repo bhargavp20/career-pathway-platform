@@ -424,7 +424,7 @@ export default function PathwayPage() {
                   
                   <p className="mt-3 leading-relaxed !text-slate-600">
                     {resource.description}
-                  </p>>
+                  </p>
 
                   <a
                     href={resource.url}
