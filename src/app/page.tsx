@@ -273,10 +273,18 @@ export default function Home() {
             Compare different pathways, understand what each one requires,
             and make a decision with better information.
           </p>
+          <Link
+            href="/explore"
+            className="inline-flex items-center rounded-full bg-blue-600 px-7 py-3.5 font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700"
+          >
+            Start Exploring →
+          </Link>
 
         </div>
 
       </section>
+
+        
 
 
       {/* Footer */}
