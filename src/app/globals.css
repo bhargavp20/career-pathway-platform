@@ -220,3 +220,34 @@ html[data-theme="emerald"] .border-slate-200,
 html[data-theme="emerald"] .border-slate-200\/70 {
   border-color: rgba(16, 185, 129, 0.2) !important;
 }
+
+/* Midnight: keep light cards readable */
+html[data-theme="midnight"] .bg-white,
+html[data-theme="midnight"] .bg-white\/90,
+html[data-theme="midnight"] .bg-white\/80 {
+  color: #0f172a !important;
+}
+
+html[data-theme="midnight"] .bg-white .text-slate-900,
+html[data-theme="midnight"] .bg-white\/90 .text-slate-900,
+html[data-theme="midnight"] .bg-white\/80 .text-slate-900 {
+  color: #0f172a !important;
+}
+
+html[data-theme="midnight"] .bg-white .text-slate-700,
+html[data-theme="midnight"] .bg-white\/90 .text-slate-700,
+html[data-theme="midnight"] .bg-white\/80 .text-slate-700 {
+  color: #334155 !important;
+}
+
+html[data-theme="midnight"] .bg-white .text-slate-600,
+html[data-theme="midnight"] .bg-white\/90 .text-slate-600,
+html[data-theme="midnight"] .bg-white\/80 .text-slate-600 {
+  color: #475569 !important;
+}
+
+html[data-theme="midnight"] .bg-white .text-slate-500,
+html[data-theme="midnight"] .bg-white\/90 .text-slate-500,
+html[data-theme="midnight"] .bg-white\/80 .text-slate-500 {
+  color: #64748b !important;
+}
