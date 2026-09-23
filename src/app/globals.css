@@ -251,3 +251,10 @@ html[data-theme="midnight"] .bg-white\/90 .text-slate-500,
 html[data-theme="midnight"] .bg-white\/80 .text-slate-500 {
   color: #64748b !important;
 }
+html[data-theme="midnight"] .pathway-resource-card h3 {
+  color: #0f172a !important;
+}
+
+html[data-theme="midnight"] .pathway-resource-card p {
+  color: #475569 !important;
+}
