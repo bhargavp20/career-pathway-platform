@@ -68,27 +68,6 @@ export default function Home() {
           </p>
 
 
-          {/* Buttons */}
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-
-            <Link
-              href="/explore"
-              className="rounded-full bg-blue-600 px-8 py-4 font-semibold text-white shadow-xl shadow-blue-600/20 transition hover:-translate-y-0.5 hover:bg-blue-700"
-            >
-              Start Exploring →
-            </Link>
-
-            <Link
-              href="/explore"
-              className="rounded-full border border-white/80 bg-white/60 px-8 py-4 font-semibold shadow-sm backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/90"
-            >
-              Explore Pathways
-            </Link>
-
-          </div>
-
-        </div>
-
 
         {/* Preview card */}
         <div className="mx-auto mt-20 max-w-5xl">
